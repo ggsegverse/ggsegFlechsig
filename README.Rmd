@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  fig.width = 10, 
+  fig.width = 10,
   fig.retina = 3
 )
 ```
@@ -22,9 +22,9 @@ knitr::opts_chunk$set(
 [![DOI](https://zenodo.org/badge/425033264.svg)](https://zenodo.org/badge/latestdoi/425033264)
 <!-- badges: end -->
 
-This package contains dataset for plotting the Flechsig (1920) historical atlas of functional segregation with ggseg and ggseg3d,  based on the supplementary materials of Pijnenburg et al., NeuroImage, 239, 2021 [DOI](https://doi.org/10.1016/j.neuroimage.2021.118274); Version 1; 15-01-2021. 
+This package contains dataset for plotting the Flechsig (1920) historical atlas of functional segregation with ggseg and ggseg3d, based on the supplementary materials of Pijnenburg et al., NeuroImage, 239, 2021 [DOI](https://doi.org/10.1016/j.neuroimage.2021.118274); Version 1; 15-01-2021.
 
-P.E. Flechsig, Anatomie Des Menschlichen Gehirns und Rückenmarks auf Myelogenetischer Grundlage, G. Thieme (1920)
+P.E. Flechsig, Anatomie Des Menschlichen Gehirns und Ruckenmarks auf Myelogenetischer Grundlage, G. Thieme (1920)
 
 To learn how to use these atlases, please look at the documentation for [ggseg](https://ggseg.github.io/ggseg/) and [ggseg3d](https://ggseg.github.io/ggseg3d)
 
@@ -33,16 +33,14 @@ To learn how to use these atlases, please look at the documentation for [ggseg](
 We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ```{r eval = FALSE}
-# Enable this universe
 options(repos = c(
     ggseg = 'https://ggseg.r-universe.dev',
     CRAN = 'https://cloud.r-project.org'))
 
-# Install some packages
 install.packages('ggsegFlechsig')
 ```
 
-You can install the released version of ggsegFlechsig from [GitHub](https://github.com/) with:
+You can install the development version of ggsegFlechsig from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
@@ -50,31 +48,36 @@ remotes::install_github("ggseg/ggsegFlechsig")
 ```
 
 ```{r, fig.height=7}
-library(ggseg)
-library(ggseg3d)
 library(ggsegFlechsig)
+library(ggseg)
+library(ggplot2)
 
-plot(flechsig) +
-  theme(legend.position = "bottom", 
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 6))
-
+ggplot() +
+  geom_brain(
+    atlas = flechsig,
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = flechsig$palette, na.value = "grey") +
+  theme_void()
 ```
 
 ```{r "noneval", eval=FALSE}
-library(dplyr)
-ggseg3d(atlas = flechsig_3d) %>% 
-  add_glassbrain() %>% 
+library(ggseg3d)
+
+ggseg3d(atlas = flechsig) |>
   pan_camera("right lateral")
 ```
 
 ```{r "orca", include=FALSE}
-library(dplyr)
-p <- ggseg3d(atlas = flechsig_3d) %>%
-  add_glassbrain(hemisphere = "left")%>%
-  pan_camera("right lateral") %>%
-  plotly::add_annotations( text="Screen capture",
-                  legendtitle=TRUE, showarrow=FALSE,
+library(ggseg3d)
+
+p <- ggseg3d(atlas = flechsig) |>
+  add_glassbrain(hemisphere = "left") |>
+  pan_camera("right lateral") |>
+  plotly::add_annotations(text = "Screen capture",
+                  legendtitle = TRUE, showarrow = FALSE,
                   font = list(color = "#000000b4",
                               family = 'sans serif',
                               size = 50))

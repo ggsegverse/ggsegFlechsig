@@ -3,34 +3,29 @@
 \docType{data}
 \name{flechsig}
 \alias{flechsig}
-\alias{flechsig_3d}
-\title{flechsig atlas}
+\title{Flechsig Myelogenetic Atlas (1920)}
 \format{
-An object of class \code{brain_atlas} of length 4.
-
-An object of class \code{ggseg3d_atlas} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 4 rows and 4 columns.
+A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cortical).
 }
 \usage{
-flechsig
-
-flechsig_3d
+data(flechsig)
 }
 \description{
-A historical Flechsig 1920 atlas based on files
-released with  Pijnenburg et al., NeuroImage,
-239, 2021, (\href{https://doi.org/10.1016/j.neuroimage.2021.118274}{DOI})
-Version 1; 15-01-2021.
+Brain atlas for the Flechsig myelogenetic cortical parcellation
+with 46 regions per hemisphere. Contains both 2D polygon geometry
+for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}} and 3D vertex indices for \code{\link[ggseg3d:ggseg3d]{ggseg3d::ggseg3d()}}.
 }
 \examples{
 data(flechsig)
-data(flechsig_3d)
+flechsig
 }
 \references{
-P.E. Flechsig, Anatomie Des Menschlichen Gehirns und Rückenmarks auf Myelogenetischer Grundlage, G. Thieme (1920)
-\itemize{
- \item{flechsig}{ - flechsig atlas}
- \item{flechsig_3d}{ - flechsig 3d mesh atlas}
+Flechsig P (1920). Anatomie des menschlichen Gehirns und
+Ruckenmarks auf myelogenetischer Grundlage. Leipzig: Georg Thieme.
+
+Pijnenburg R et al. (2021). Myelo-architectonic mapping of the
+Flechsig atlas. \emph{NeuroImage}, 239, 118274.
+\doi{10.1016/j.neuroimage.2021.118274}
 }
-}
-\concept{ggseg_atlases ggseg3d_atlases}
+\concept{ggseg_atlases}
 \keyword{datasets}
