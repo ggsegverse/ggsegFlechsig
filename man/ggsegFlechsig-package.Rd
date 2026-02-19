@@ -13,8 +13,8 @@ Flechsig myelogenetic cortical atlas for the 'ggseg' ecosystem. Provides a unifi
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegFlechsig}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegFlechsig/issues}
+  \item \url{https://github.com/ggsegverse/ggsegFlechsig}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegFlechsig/issues}
 }
 
 }

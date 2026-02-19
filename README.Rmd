@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 # ggsegFlechsig <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/ggseg/ggsegFlechsig/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegFlechsig/actions)
+[![R-CMD-check](https://github.com/ggsegverse/ggsegFlechsig/workflows/R-CMD-check/badge.svg)](https://github.com/ggsegverse/ggsegFlechsig/actions)
 [![DOI](https://zenodo.org/badge/425033264.svg)](https://zenodo.org/badge/latestdoi/425033264)
 <!-- badges: end -->
 
@@ -26,15 +26,15 @@ This package contains dataset for plotting the Flechsig (1920) historical atlas 
 
 P.E. Flechsig, Anatomie Des Menschlichen Gehirns und Ruckenmarks auf Myelogenetischer Grundlage, G. Thieme (1920)
 
-To learn how to use these atlases, please look at the documentation for [ggseg](https://ggseg.github.io/ggseg/) and [ggseg3d](https://ggseg.github.io/ggseg3d)
+To learn how to use these atlases, please look at the documentation for [ggseg](https://ggsegverse.github.io/ggseg/) and [ggseg3d](https://ggsegverse.github.io/ggseg3d)
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
+We recommend installing the ggseg-atlases through the ggsegverse [r-universe](https://ggsegverse.r-universe.dev/ui#builds):
 
 ```{r eval = FALSE}
 options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
+    ggsegverse = 'https://ggsegverse.r-universe.dev',
     CRAN = 'https://cloud.r-project.org'))
 
 install.packages('ggsegFlechsig')
@@ -44,7 +44,7 @@ You can install the development version of ggsegFlechsig from [GitHub](https://g
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("ggseg/ggsegFlechsig")
+remotes::install_github("ggsegverse/ggsegFlechsig")
 ```
 
 ```{r, fig.height=7}
