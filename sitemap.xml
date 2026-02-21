@@ -1,21 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/flechsig.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/404.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/LICENSE.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/authors.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/copilot-instructions.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/index.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/news/index.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/reference/flechsig.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/reference/ggsegFlechsig-package.html</loc></url>
+<url><loc>https://ggsegverse.github.io/ggsegFlechsig/reference/index.html</loc></url>
 </urlset>
+
