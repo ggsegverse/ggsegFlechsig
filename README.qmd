@@ -1,10 +1,11 @@
 ---
-output: github_document
+format: gfm
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -30,11 +31,12 @@ To learn how to use these atlases, please look at the documentation for [ggseg](
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggsegverse [r-universe](https://ggsegverse.r-universe.dev/ui#builds):
+We recommend installing the ggseg-atlases through the ggsegverse [r-universe](https://ggseg.r-universe.dev/ui#builds):
 
-```{r eval = FALSE}
+```{r}
+#| eval: false
 options(repos = c(
-    ggsegverse = 'https://ggsegverse.r-universe.dev',
+    ggsegverse = 'https://ggseg.r-universe.dev',
     CRAN = 'https://cloud.r-project.org'))
 
 install.packages('ggsegFlechsig')
@@ -47,7 +49,8 @@ You can install the development version of ggsegFlechsig from [GitHub](https://g
 remotes::install_github("ggsegverse/ggsegFlechsig")
 ```
 
-```{r, fig.height=7}
+```{r}
+#| fig-height: 7
 library(ggsegFlechsig)
 library(ggseg)
 library(ggplot2)
@@ -63,14 +66,18 @@ ggplot() +
   theme_void()
 ```
 
-```{r "noneval", eval=FALSE}
+```{r}
+#| label: noneval
+#| eval: false
 library(ggseg3d)
 
 ggseg3d(atlas = flechsig()) |>
   pan_camera("right lateral")
 ```
 
-```{r "orca", include=FALSE}
+```{r}
+#| label: orca
+#| include: false
 library(ggseg3d)
 
 p <- ggseg3d(atlas = flechsig()) |>
@@ -81,10 +88,12 @@ p <- ggseg3d(atlas = flechsig()) |>
                   font = list(color = "#000000b4",
                               family = 'sans serif',
                               size = 50))
-plotly::orca(p, "man/figures/README-3d-plot.png")
+snapshot_brain("man/figures/README-3d-plot.png")
 ```
 
-```{r "incl", echo=FALSE}
+```{r}
+#| label: incl
+#| echo: false
 knitr::include_graphics("man/figures/README-3d-plot.png")
 ```
 
