@@ -5,6 +5,7 @@ format: gfm
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r}
+#| label: setup
 #| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -34,6 +35,7 @@ To learn how to use these atlases, please look at the documentation for [ggseg](
 We recommend installing the ggseg-atlases through the ggsegverse [r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ```{r}
+#| label: install
 #| eval: false
 options(repos = c(
     ggsegverse = 'https://ggseg.r-universe.dev',
@@ -50,6 +52,7 @@ remotes::install_github("ggsegverse/ggsegFlechsig")
 ```
 
 ```{r}
+#| label: 2d-plot
 #| fig-height: 7
 library(ggsegFlechsig)
 library(ggseg)
@@ -76,19 +79,14 @@ ggseg3d(atlas = flechsig()) |>
 ```
 
 ```{r}
-#| label: orca
+#| label: 3d-snapshot
 #| include: false
+#| eval: !expr (file.exists(Sys.which("chrome")) || file.exists(Sys.which("chromium"))) && !nzchar(Sys.getenv("CI"))
 library(ggseg3d)
 
-p <- ggseg3d(atlas = flechsig()) |>
-  add_glassbrain(hemisphere = "left") |>
+ggseg3d(atlas = flechsig()) |>
   pan_camera("right lateral") |>
-  plotly::add_annotations(text = "Screen capture",
-                  legendtitle = TRUE, showarrow = FALSE,
-                  font = list(color = "#000000b4",
-                              family = 'sans serif',
-                              size = 50))
-snapshot_brain("man/figures/README-3d-plot.png")
+  snapshot_brain("man/figures/README-3d-plot.png")
 ```
 
 ```{r}
