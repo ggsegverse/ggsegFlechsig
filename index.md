@@ -6,7 +6,7 @@ on the supplementary materials of Pijnenburg et al., NeuroImage, 239,
 2021 [DOI](https://doi.org/10.1016/j.neuroimage.2021.118274); Version 1;
 15-01-2021.
 
-P.E. Flechsig, Anatomie Des Menschlichen Gehirns und Rückenmarks auf
+P.E. Flechsig, Anatomie Des Menschlichen Gehirns und Ruckenmarks auf
 Myelogenetischer Grundlage, G. Thieme (1920)
 
 To learn how to use these atlases, please look at the documentation for
@@ -15,20 +15,18 @@ To learn how to use these atlases, please look at the documentation for
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg
-[r-universe](https://ggsegverse.r-universe.dev/ui#builds):
+We recommend installing the ggseg-atlases through the ggsegverse
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ``` r
-# Enable this universe
 options(repos = c(
-    ggsegverse = 'https://ggsegverse.r-universe.dev',
+    ggsegverse = 'https://ggseg.r-universe.dev',
     CRAN = 'https://cloud.r-project.org'))
 
-# Install some packages
 install.packages('ggsegFlechsig')
 ```
 
-You can install the released version of ggsegFlechsig from
+You can install the development version of ggsegFlechsig from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -37,24 +35,27 @@ remotes::install_github("ggsegverse/ggsegFlechsig")
 ```
 
 ``` r
-library(ggseg)
-#> Warning: package 'ggseg' was built under R version 4.1.1
-#> Loading required package: ggplot2
-library(ggseg3d)
 library(ggsegFlechsig)
+library(ggseg)
+library(ggplot2)
 
-plot(flechsig) +
-  theme(legend.position = "bottom", 
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 6))
+ggplot() +
+  geom_brain(
+    atlas = flechsig(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = flechsig()$palette, na.value = "grey") +
+  theme_void()
 ```
 
-![](reference/figures/README-unnamed-chunk-3-1.png)
+![](reference/figures/README-2d-plot-1.png)
 
 ``` r
-library(dplyr)
-ggseg3d(atlas = flechsig_3d) %>% 
-  add_glassbrain() %>% 
+library(ggseg3d)
+
+ggseg3d(atlas = flechsig()) |>
   pan_camera("right lateral")
 ```
 
