@@ -1,5 +1,5 @@
 Package: ggsegFlechsig
-Title: Flechsig Myelogenetic Atlas for the 'ggseg' Ecosystem
+Title: Flechsig Myelogenetic Atlas for the 'ggsegverse' Ecosystem
 Version: 2.0.1
 Authors@R: c(person("Athanasia Mo", "Mowinckel",
                     email = "a.m.mowinckel@psykologi.uio.no",
