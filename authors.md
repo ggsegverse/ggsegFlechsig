@@ -11,13 +11,13 @@ Source:
 [`DESCRIPTION`](https://github.com/ggsegverse/ggsegFlechsig/blob/main/DESCRIPTION)
 
 Mowinckel A (2026). *ggsegFlechsig: Flechsig Myelogenetic Atlas for the
-'ggseg' Ecosystem*. R package version 2.0.0,
+'ggsegverse' Ecosystem*. R package version 2.0.1,
 <https://github.com/ggsegverse/ggsegFlechsig>.
 
     @Manual{,
-      title = {ggsegFlechsig: Flechsig Myelogenetic Atlas for the 'ggseg' Ecosystem},
+      title = {ggsegFlechsig: Flechsig Myelogenetic Atlas for the 'ggsegverse' Ecosystem},
       author = {Athanasia Mo Mowinckel},
       year = {2026},
-      note = {R package version 2.0.0},
+      note = {R package version 2.0.1},
       url = {https://github.com/ggsegverse/ggsegFlechsig},
     }
