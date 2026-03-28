@@ -33,3 +33,12 @@ hemisphere (Pijnenburg et al., 2021).
 ![flechsig](reference/figures/flechsig_snapshot.png)
 
 flechsig
+
+## Data source
+
+Annotation files from the supplementary materials of Pijnenburg et
+al. (2021), projected onto fsaverage5.
+
+- **Reference**: Flechsig (1920); Pijnenburg et al. (2021)
+  [doi:10.1016/j.neuroimage.2021.118274](https://doi.org/10.1016/j.neuroimage.2021.118274)
+- **Date obtained**: 2021-11-05
