@@ -18,4 +18,5 @@
 #' @export
 #' @examples
 #' flechsig()
+#' plot(flechsig())
 flechsig <- function() .flechsig
