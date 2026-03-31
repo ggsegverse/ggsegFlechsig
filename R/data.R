@@ -5,6 +5,7 @@
 #' for [ggseg::geom_brain()] and 3D vertex indices for [ggseg3d::ggseg3d()].
 #'
 #' @family ggseg_atlases
+#' @family cortical_atlases
 #'
 #' @references Flechsig P (1920). Anatomie des menschlichen Gehirns und
 #'   Ruckenmarks auf myelogenetischer Grundlage. Leipzig: Georg Thieme.
